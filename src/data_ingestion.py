@@ -34,3 +34,22 @@ if __name__ == "__main__":
     
     df = load_kpi_data(data_path)
     print(df.head())
+
+
+import sqlalchemy
+
+def load_kpi_from_sql(query, db_url):
+    """
+    Loads KPI data from a SQL database.
+    Args:
+        query (str): SQL query to run.
+        db_url (str): SQLAlchemy database URL.
+    Returns:
+        pandas.DataFrame: DataFrame containing KPI data.
+    """
+    engine = sqlalchemy.create_engine(db_url)
+    with engine.connect() as conn:
+        df = pd.read_sql(query, conn)
+    df['date'] = pd.to_datetime(df['date'])
+    print(f"Loaded {len(df)} rows of data from database.")
+    return df
