@@ -1,0 +1,16 @@
+# Configurations for AI KPI Insights Agent
+
+database:
+  host: "localhost"
+  user: "username"
+  password: "password"
+  database_name: "kpi_database"
+
+api_keys:
+  google_analytics: "your-google-api-key"
+
+monitoring:
+  anomaly_sensitivity: 0.05  # percentage of anomalies expected
+
+visualization:
+  dashboard_port: 8501

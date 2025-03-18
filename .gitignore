@@ -172,3 +172,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore virtual environments
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment and system files
+.env
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
